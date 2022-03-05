@@ -1,0 +1,12 @@
+usb reset 1 
+ext2ls usb 0:1
+dmesg | grep sd[abc]
+mount -t ext2 /dev/sdb1 /load
+cd /load
+ls
+lost+found  nos6.0.2a
+cd nos6.0.2a
+chmod 755 *
+ls -lh
+ls -lh install*
+./install release; sync; reboot -f
